@@ -71,8 +71,8 @@ body {
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 0 30px #0066ff, 0 0 60px #ffd60a, 0 0 90px rgba(0, 182, 216, 0.5);
-  width: 350px;
-  max-width: 90vw;
+  width: 90%;
+  max-width: 400px;
   text-align: center;
   animation: fadeIn 1s ease-in-out;
   border: 2px solid transparent;
@@ -267,6 +267,8 @@ a:hover {
 /* SEARCH BAR */
 .navbar input {
   width: 40%;
+  min-width: 150px;
+  max-width: 300px;
   padding: 10px;
   border-radius: 10px;
   border: 2px solid transparent;
@@ -375,7 +377,8 @@ a:hover {
   background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 29, 61, 0.6));
   padding: 20px;
   border-radius: 15px;
-  width: 250px;
+  width: 100%;
+  max-width: 300px;
   text-align: center;
   box-shadow: 0 0 25px #0066ff, 0 0 40px rgba(255, 214, 10, 0.3);
   transition: 0.3s;
@@ -417,8 +420,8 @@ a:hover {
   padding: 40px;
   border-radius: 20px;
   text-align: center;
-  width: 350px;
-  max-width: 90vw;
+  width: 90%;
+  max-width: 400px;
   box-shadow: 0 0 30px #0066ff, 0 0 60px #ffd60a, 0 0 90px rgba(0, 182, 216, 0.5);
   border: 2px solid transparent;
   background-clip: padding-box;
@@ -566,8 +569,8 @@ a:hover {
   padding: 40px;
   border-radius: 20px;
   text-align: center;
-  width: 400px;
-  max-width: 90vw;
+  width: 90%;
+  max-width: 450px;
   box-shadow: 0 0 30px #0066ff, 0 0 60px #ffd60a, 0 0 90px rgba(0, 182, 216, 0.5);
   border: 2px solid transparent;
   background-clip: padding-box;
@@ -598,11 +601,18 @@ a:hover {
   cursor: pointer;
 }
 
-/* RESPONSIVE DESIGN - MOBILE */
+/* RESPONSIVE DESIGN - MOBILE & TABLET */
+@media (max-width: 1024px) {
+  .navbar input {
+    width: 35%;
+    min-width: 120px;
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     width: 90%;
-    padding: 25px 20px;
+    padding: 30px 25px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -619,29 +629,38 @@ a:hover {
 
   .navbar h2 {
     font-size: 18px;
+    flex-shrink: 0;
   }
 
   .navbar input {
     width: 100%;
+    max-width: 100%;
     margin-top: 10px;
     order: 3;
+    min-width: auto;
   }
 
   .nav-left {
     gap: 10px;
+    flex: 1;
+    min-width: 0;
   }
 
   .nav-avatar {
     width: 40px;
     height: 40px;
+    flex-shrink: 0;
   }
 
   .hamburger {
     font-size: 24px;
+    flex-shrink: 0;
+    cursor: pointer;
   }
 
   .side-menu {
-    width: 200px;
+    width: 220px;
+    max-width: 85vw;
   }
 
   .main-content {
@@ -649,41 +668,71 @@ a:hover {
     padding: 20px 15px;
     padding-top: 25px;
     min-height: calc(100vh - 140px);
+    width: 100%;
   }
 
   .intro-section {
     margin-bottom: 25px;
     padding-top: 10px;
+    width: 100%;
+  }
+
+  .intro-section h1 {
+    font-size: 22px;
+    word-wrap: break-word;
+  }
+
+  .intro-section p {
+    font-size: 14px;
+    padding: 0 10px;
   }
 
   .captives {
     flex-direction: column;
     align-items: center;
     gap: 15px;
+    width: 100%;
   }
 
   .card {
     width: 100%;
-    max-width: 300px;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .card h3 {
+    font-size: 18px;
+  }
+
+  .card p {
+    font-size: 14px;
   }
 
   .profile {
     width: 90%;
+    max-width: 400px;
     padding: 30px 20px;
   }
 
   .settings {
     padding: 30px 20px;
     width: 90%;
+    max-width: 450px;
   }
 
   .setting-item {
     padding: 12px;
+    font-size: 14px;
+  }
+
+  .setting-item label {
+    font-size: 14px;
   }
 
   button {
     padding: 12px;
     font-size: 14px;
+    min-height: 44px; /* Better touch target */
   }
 
   h1 {
@@ -692,14 +741,22 @@ a:hover {
 
   input {
     padding: 12px;
+    font-size: 16px; /* Prevents zoom on iOS */
+    min-height: 44px;
+  }
+
+  #profileHomeBtn,
+  #settingsHomeBtn {
+    padding: 10px 15px;
     font-size: 14px;
+    min-height: 44px;
   }
 }
 
 @media (max-width: 480px) {
   .container {
     width: 95%;
-    padding: 20px 15px;
+    padding: 25px 20px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -716,6 +773,21 @@ a:hover {
     font-size: 16px;
   }
 
+  .nav-avatar {
+    width: 35px;
+    height: 35px;
+  }
+
+  .hamburger {
+    font-size: 22px;
+  }
+
+  .side-menu {
+    width: 200px;
+    max-width: 80vw;
+    padding: 30px 15px;
+  }
+
   .main-content {
     margin-top: 120px;
     padding: 15px 10px;
@@ -730,14 +802,36 @@ a:hover {
 
   .intro-section h1 {
     font-size: 20px;
+    line-height: 1.3;
+  }
+
+  .intro-section p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .captives {
+    gap: 12px;
   }
 
   .card {
-    padding: 15px;
+    padding: 18px 15px;
+    border-radius: 12px;
+  }
+
+  .card h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .card p {
+    font-size: 13px;
+    line-height: 1.4;
   }
 
   .profile {
     padding: 25px 15px;
+    width: 95%;
   }
 
   .profile-pic {
@@ -745,8 +839,9 @@ a:hover {
     height: 70px;
   }
 
-  #profileHomeBtn {
-    padding: 6px 10px;
+  #profileHomeBtn,
+  #settingsHomeBtn {
+    padding: 8px 12px;
     font-size: 12px;
   }
 
@@ -754,16 +849,41 @@ a:hover {
     padding: 25px 15px;
     width: 95%;
   }
+
+  .setting-item {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  button {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  input {
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
 }
 
-/* TABLET */
+/* TABLET - Landscape and large tablets */
 @media (min-width: 769px) and (max-width: 1024px) {
   .card {
-    width: 220px;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .captives {
+    gap: 20px;
   }
 
   .container {
-    width: 400px;
+    width: 90%;
+    max-width: 420px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -772,6 +892,30 @@ a:hover {
 
   .navbar input {
     width: 35%;
+    min-width: 150px;
+  }
+
+  .main-content {
+    padding: 25px;
+  }
+}
+
+/* LARGE SCREENS */
+@media (min-width: 1200px) {
+  .card {
+    max-width: 320px;
+  }
+
+  .container,
+  .profile,
+  .settings {
+    max-width: 450px;
+  }
+
+  .main-content {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
