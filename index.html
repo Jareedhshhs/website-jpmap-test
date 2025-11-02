@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JPMAP Portal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- LOGIN & SIGNUP -->
+  <div class="container" id="authContainer">
+    <form id="loginForm" class="form">
+      <h1>Welcome to <span>JPMAP</span></h1>
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+      <p>Don’t have an account? <a href="#" id="toSignup">Sign up</a></p>
+    </form>
+
+    <form id="signupForm" class="form hidden">
+      <h1>Create your <span>JPMAP</span> account</h1>
+      <input type="text" id="newUser" placeholder="New Username" required />
+      <input type="password" id="newPass" placeholder="New Password" required />
+      <button type="submit">Sign Up</button>
+      <p>Already have an account? <a href="#" id="toLogin">Login</a></p>
+    </form>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div class="dashboard hidden" id="dashboard">
+    <h1>Welcome to <span>JPMAP</span></h1>
+    <p>Your futuristic control hub is now active.</p>
+    <button id="getStartedBtn">Get Started</button>
+  </div>
+
+  <!-- HOME PAGE -->
+  <div class="home hidden" id="homePage">
+    <nav class="navbar">
+      <div class="nav-left">
+        <div class="hamburger" id="hamburger">☰</div>
+        <h2>JPMAP</h2>
+        <img src="profile.jpg" alt="Avatar" id="navAvatar" class="nav-avatar">
+      </div>
+      <input type="text" placeholder="Search..." id="searchBar" />
+    </nav>
+
+    <!-- SIDE MENU -->
+    <div class="side-menu" id="sideMenu">
+      <button id="closeMenu">✖</button>
+      <h3>Menu</h3>
+      <button id="accountSide">Account</button>
+      <button id="homeSideBtn">Home</button>
+      <button id="settingsSide">Settings</button>
+      <button id="logoutSide">Logout</button>
+    </div>
+
+    <!-- SCROLLABLE AREA -->
+    <main class="main-content">
+      <section class="intro-section">
+        <h1>Welcome, <span id="displayUser"></span>!</h1>
+        <p>You’ve successfully entered the JPMAP network. Explore your control interface.</p>
+      </section>
+
+      <section class="captives">
+        <div class="card"><h3>Mission Panel</h3><p>Track your progress and upcoming assignments here.</p></div>
+        <div class="card"><h3>Resource Hub</h3><p>Access learning materials, tools, and updates from JPMAP.</p></div>
+        <div class="card"><h3>Activity Feed</h3><p>Stay updated on recent operations and communications.</p></div>
+        <div class="card"><h3>New Log System</h3><p>See your latest logs and progress updates here.</p></div>
+        <div class="card"><h3>AI Assistant</h3><p>Chat with your built-in JPMAP AI partner.</p></div>
+      </section>
+    </main>
+  </div>
+
+  <!-- PROFILE PAGE -->
+  <div class="profile hidden" id="profilePage">
+    <button id="profileHomeBtn">← Home</button>
+    <h1>Your Profile</h1>
+    <img src="profile.jpg" alt="Profile Picture" class="profile-pic" id="profilePic" />
+    <p id="profileName">Username: <span id="profileUsername"></span></p>
+    <input type="file" id="avatarInput" accept="image/*" />
+  </div>
+
+  <!-- SETTINGS PAGE -->
+  <div class="settings hidden" id="settingsPage">
+    <button id="settingsHomeBtn">← Home</button>
+    <h1>Settings</h1>
+
+    <div class="setting-item">
+      <label>🌗 Theme Mode:</label>
+      <button id="themeToggle">Toggle Light/Dark Mode</button>
+    </div>
+
+    <div class="setting-item">
+      <label>🎵 Background Music:</label>
+      <button id="musicToggle">Play / Pause</button>
+      <audio id="bgMusic" loop>
+        <source src="Assets/Music/chill.mp3" type="audio/mpeg" />
+      </audio>
+    </div>
+
+    <div class="setting-item">
+      <label>💡 Accent Color:</label>
+      <input type="color" id="accentPicker" value="#00b4d8">
+    </div>
+
+    <div class="setting-item">
+      <button id="resetSettings">Reset to Default</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
