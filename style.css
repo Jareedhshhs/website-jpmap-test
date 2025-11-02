@@ -10,6 +10,7 @@
 html, body {
   height: 100%;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* CUSTOM SCROLLBAR */
@@ -249,6 +250,7 @@ a:hover {
   box-shadow: 0 0 30px #0066ff, 0 0 50px rgba(255, 214, 10, 0.3);
   z-index: 1000;
   backdrop-filter: blur(10px);
+  padding-top: max(15px, env(safe-area-inset-top));
 }
 
 .nav-left {
@@ -346,6 +348,20 @@ a:hover {
   text-align: center;
   margin-top: 100px;
   padding: 20px;
+  padding-top: max(20px, env(safe-area-inset-top));
+}
+
+.intro-section {
+  margin-bottom: 30px;
+  padding-top: 10px;
+}
+
+.intro-section h1 {
+  margin-bottom: 15px;
+}
+
+.intro-section p {
+  margin-bottom: 10px;
 }
 
 .captives {
@@ -597,6 +613,8 @@ a:hover {
   .navbar {
     padding: 10px 15px;
     flex-wrap: wrap;
+    padding-top: max(10px, env(safe-area-inset-top));
+    min-height: 60px;
   }
 
   .navbar h2 {
@@ -627,8 +645,15 @@ a:hover {
   }
 
   .main-content {
-    margin-top: 80px;
-    padding: 15px;
+    margin-top: 140px;
+    padding: 20px 15px;
+    padding-top: 25px;
+    min-height: calc(100vh - 140px);
+  }
+
+  .intro-section {
+    margin-bottom: 25px;
+    padding-top: 10px;
   }
 
   .captives {
@@ -683,6 +708,8 @@ a:hover {
 
   .navbar {
     padding: 8px 10px;
+    padding-top: max(8px, env(safe-area-inset-top));
+    min-height: 55px;
   }
 
   .navbar h2 {
@@ -690,8 +717,15 @@ a:hover {
   }
 
   .main-content {
-    margin-top: 70px;
-    padding: 10px;
+    margin-top: 120px;
+    padding: 15px 10px;
+    padding-top: 20px;
+    min-height: calc(100vh - 120px);
+  }
+
+  .intro-section {
+    margin-bottom: 20px;
+    padding-top: 5px;
   }
 
   .intro-section h1 {
